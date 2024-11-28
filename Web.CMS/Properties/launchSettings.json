@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Web.CMS": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:57129;http://localhost:57130"
+    }
+  }
+}
