@@ -7,13 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspose.Cells" Version="20.10.0" />
-    <PackageReference Include="EPPlus" Version="4.5.3.3" />
+    <PackageReference Include="NEST" Version="7.17.5" />
+    <PackageReference Include="StackExchange.Redis" Version="2.1.58" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Catching\Caching.csproj" />
-    <ProjectReference Include="..\DAL\DAL.csproj" />
     <ProjectReference Include="..\Entities\Entities.csproj" />
     <ProjectReference Include="..\Utilities\Utilities.csproj" />
   </ItemGroup>
