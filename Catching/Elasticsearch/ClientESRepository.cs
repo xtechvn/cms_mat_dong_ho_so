@@ -19,7 +19,7 @@ namespace Caching.Elasticsearch
         public ClientESRepository(string Host) : base(Host) { }
 
 
-        public async Task<List<CustomerESViewModel>> GetClientSuggesstion(string txt_search, string index_name = "client_hulotoys_store")
+        public async Task<List<CustomerESViewModel>> GetClientSuggesstion(string txt_search, string index_name = "client_oclock_store")
         {
             List<CustomerESViewModel> result = new List<CustomerESViewModel>();
             try

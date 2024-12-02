@@ -15,7 +15,7 @@ namespace HuloToys_Service.ElasticSearch.NewEs
 {
     public class GroupProductESService : ESRepository<GroupProduct>
     {
-        public string index = "group_product_hulotoys_store";
+        public string index = "group_product_oclock_store";
         private readonly IConfiguration configuration;
         private static string _ElasticHost;
 

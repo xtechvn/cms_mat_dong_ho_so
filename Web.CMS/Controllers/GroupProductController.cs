@@ -108,8 +108,8 @@ namespace WEB.CMS.Controllers
                 var j_param = new Dictionary<string, object>
                             {
                                 { "store_name", "sp_getGroupProduct" },
-                                { "index_es", "es_biolife_sp_get_groupproduct" },
-                                {"project_type", Convert.ToInt16(ProjectType.BIOLIFE) },
+                                { "index_es", "oclock_sp_get_groupproduct" },
+                                {"project_type", Convert.ToInt16(ProjectType.DIGITAL_OCLOCK) },
                                   {"id" , id }
                             };
                 var _data_push = JsonConvert.SerializeObject(j_param);
@@ -162,8 +162,8 @@ namespace WEB.CMS.Controllers
                     var j_param = new Dictionary<string, object>
                             {
                                 { "store_name", "sp_getGroupProduct" },
-                                { "index_es", "es_biolife_sp_get_groupproduct" },
-                                {"project_type", Convert.ToInt16(ProjectType.BIOLIFE) },
+                                { "index_es", "oclock_sp_get_groupproduct" },
+                                {"project_type", Convert.ToInt16(ProjectType.DIGITAL_OCLOCK) },
                                   {"id" ,  model.Id }
                             };
                     var _data_push = JsonConvert.SerializeObject(j_param);
