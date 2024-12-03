@@ -108,7 +108,7 @@ namespace WEB.CMS.Controllers
                 var j_param = new Dictionary<string, object>
                             {
                                 { "store_name", "sp_getGroupProduct" },
-                                { "index_es", "oclock_sp_get_groupproduct" },
+                                { "index_es", "oclock_sp_getgroupproduct" },
                                 {"project_type", Convert.ToInt16(ProjectType.DIGITAL_OCLOCK) },
                                   {"id" , id }
                             };
@@ -162,7 +162,7 @@ namespace WEB.CMS.Controllers
                     var j_param = new Dictionary<string, object>
                             {
                                 { "store_name", "sp_getGroupProduct" },
-                                { "index_es", "oclock_sp_get_groupproduct" },
+                                { "index_es", "oclock_sp_getgroupproduct" },
                                 {"project_type", Convert.ToInt16(ProjectType.DIGITAL_OCLOCK) },
                                   {"id" ,  model.Id }
                             };
