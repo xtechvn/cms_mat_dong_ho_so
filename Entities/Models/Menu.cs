@@ -11,11 +11,11 @@ public partial class Menu
 
     public string Name { get; set; }
 
-    public string? Title { get; set; }
+    public string Title { get; set; }
 
-    public string? MenuCode { get; set; }
+    public string MenuCode { get; set; }
 
-    public string? Description { get; set; }
+    public string Description { get; set; }
 
     public int Status { get; set; }
 
@@ -23,13 +23,13 @@ public partial class Menu
 
     public DateTime? ModifiedOn { get; set; }
 
-    public string? Icon { get; set; }
+    public string Icon { get; set; }
 
-    public string? Link { get; set; }
+    public string Link { get; set; }
 
     public int? OrderNo { get; set; }
 
-    public string? FullParent { get; set; }
+    public string FullParent { get; set; }
 
     public virtual ICollection<Action> Actions { get; set; } = new List<Action>();
 
