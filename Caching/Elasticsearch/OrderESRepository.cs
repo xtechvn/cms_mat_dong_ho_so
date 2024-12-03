@@ -13,7 +13,7 @@ namespace Caching.Elasticsearch
 {
     public class OrderESRepository : ESRepository<OrderElasticsearchViewModel>
     {
-        public string index_name = "order_oclock_store";
+        public string index_name = "order_hulotoys_store";
         private readonly IConfiguration configuration;
         private static string _ElasticHost;
         public OrderESRepository(string Host, IConfiguration _configuration) : base(Host)

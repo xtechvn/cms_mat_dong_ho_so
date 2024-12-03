@@ -17,7 +17,7 @@ namespace Caching.Elasticsearch
 {
     public class ClientESService : ESRepository<Client>
     {
-        public string index = "client_oclock_store";
+        public string index = "client_hulotoys_store";
         private readonly IConfiguration configuration;
         private static string _ElasticHost;
         public ClientESService(string Host, IConfiguration _configuration) : base(Host)
