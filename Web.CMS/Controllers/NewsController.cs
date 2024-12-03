@@ -192,7 +192,7 @@ namespace WEB.CMS.Controllers
                             {
                                 { "store_name", "SP_GetAllArticle" },
                                 { "index_es", "oclock_sp_getarticle" },
-                                {"project_type", Convert.ToInt16(ProjectType.BIOLIFE) },
+                                {"project_type", Convert.ToInt16(ProjectType.OCLOCK) },
                                   {"id" , articleId }
                             };
                     var _data_push = JsonConvert.SerializeObject(j_param);
@@ -257,7 +257,7 @@ namespace WEB.CMS.Controllers
                             {
                                 { "store_name", "SP_GetAllArticle" },
                                 { "index_es", "oclock_sp_getarticle" },
-                                {"project_type", Convert.ToInt16(ProjectType.BIOLIFE) },
+                                {"project_type", Convert.ToInt16(ProjectType.OCLOCK) },
                                   {"id" , Id }
                             };
                     var _data_push = JsonConvert.SerializeObject(j_param);
