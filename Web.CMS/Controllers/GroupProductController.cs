@@ -118,7 +118,7 @@ namespace WEB.CMS.Controllers
             }
             catch (Exception ex)
             {
-                LogHelper.InsertLogTelegramByUrl(_configuration["BotSetting:bot_token"], _configuration["BotSetting:bot_group_id"], ex.Message.ToString());
+                Utilities.LogHelper.InsertLogTelegram("GroupProduct - AddOrUpdate Error: " + ex);
             }
 
             ViewBag.PositionList = await _PositionRepository.GetAll();

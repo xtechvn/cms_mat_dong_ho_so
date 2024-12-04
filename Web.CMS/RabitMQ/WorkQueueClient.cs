@@ -61,7 +61,7 @@ namespace WEB.CMS.RabitMQ
                 catch (Exception ex)
                 {
                     string error_msg = Assembly.GetExecutingAssembly().GetName().Name + "->" + MethodBase.GetCurrentMethod().Name + "=>" + ex.Message;
-                    LogHelper.InsertLogTelegramByUrl(configuration["BotSetting:bot_token"], configuration["BotSetting:bot_group_id"], error_msg);
+                    Utilities.LogHelper.InsertLogTelegram("WorkQueueClient - InsertQueueSimple Error: " + error_msg);
                     return false;
                 }
             }
