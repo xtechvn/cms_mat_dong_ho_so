@@ -116,9 +116,9 @@ namespace WEB.CMS.Controllers
                 // Push message vào queue
                 var response_queue = work_queue.InsertQueueSimple(_data_push, QueueName.queue_app_push);
             }
-            catch
+            catch (Exception ex)
             {
-
+                LogHelper.InsertLogTelegramByUrl(_configuration["BotSetting:bot_token"], _configuration["BotSetting:bot_group_id"], ex.Message.ToString());
             }
 
             ViewBag.PositionList = await _PositionRepository.GetAll();
