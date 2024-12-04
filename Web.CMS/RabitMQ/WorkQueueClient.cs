@@ -55,6 +55,8 @@ namespace WEB.CMS.RabitMQ
                                          routingKey: queueName,
                                          basicProperties: null,
                                          body: body);
+                    Utilities.LogHelper.InsertLogTelegram("WorkQueueClient - InsertQueueSimple Success: " +message + queueName);
+
                     return true;
 
                 }
