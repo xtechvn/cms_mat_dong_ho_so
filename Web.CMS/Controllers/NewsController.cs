@@ -191,7 +191,7 @@ namespace WEB.CMS.Controllers
                     var j_param = new Dictionary<string, object>
                             {
                                 { "store_name", "SP_GetAllArticle" },
-                                { "index_es", "oclock_sp_getarticle" },
+                                { "index_es", "oclock_sp_getallarticle" },
                                 {"project_type", Convert.ToInt16(ProjectType.OCLOCK) },
                                   {"id" , articleId }
                             };
