@@ -1,4 +1,5 @@
-﻿using Entities.ViewModels;
+﻿using Caching.RedisWorker;
+using Entities.ViewModels;
 using Entities.ViewModels.News;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,9 +35,10 @@ namespace WEB.CMS.Controllers
         private readonly ICommonRepository _CommonRepository;
         private readonly IWebHostEnvironment _WebHostEnvironment;
         private readonly IConfiguration _configuration;
+        private readonly RedisConn _redisService;
         private readonly WorkQueueClient work_queue;
 
-        public NewsController(IConfiguration configuration, IArticleRepository articleRepository, IUserRepository userRepository, ICommonRepository commonRepository, IWebHostEnvironment hostEnvironment,
+        public NewsController(IConfiguration configuration, RedisConn redisService, IArticleRepository articleRepository, IUserRepository userRepository, ICommonRepository commonRepository, IWebHostEnvironment hostEnvironment,
             IGroupProductRepository groupProductRepository)
         {
             _ArticleRepository = articleRepository;
@@ -46,8 +48,8 @@ namespace WEB.CMS.Controllers
             _configuration = configuration;
             _GroupProductRepository = groupProductRepository;
             work_queue = new WorkQueueClient(configuration);
-
-
+            _redisService = redisService;
+            _redisService.Connect();
         }
 
         public async Task<IActionResult> Index()
@@ -185,7 +187,7 @@ namespace WEB.CMS.Controllers
                     if (model.Categories != null && model.Categories.Count > 0)
                         strCategories = string.Join(",", model.Categories);
 
-                    ClearCacheArticle(articleId, strCategories);
+                    _redisService.DeleteCacheByKeyword(CacheName.ARTICLE_CATEGORY_ID, Convert.ToInt32(_configuration["Redis:Database:db_common"]));
 
                     // Tạo message để push vào queue
                     var j_param = new Dictionary<string, object>
@@ -250,7 +252,7 @@ namespace WEB.CMS.Controllers
                 {
                     //  clear cache article
                     var Categories = await _ArticleRepository.GetArticleCategoryIdList(Id);
-                    ClearCacheArticle(Id, string.Join(",", Categories));
+                    _redisService.DeleteCacheByKeyword(CacheName.ARTICLE_CATEGORY_ID, Convert.ToInt32(_configuration["Redis:Database:db_common"]));
 
                     // Tạo message để push vào queue
                     var j_param = new Dictionary<string, object>
@@ -302,7 +304,7 @@ namespace WEB.CMS.Controllers
                 if (rs > 0)
                 {
                     //  clear cache article
-                    ClearCacheArticle(Id, string.Join(",", Categories));
+                    _redisService.DeleteCacheByKeyword(CacheName.ARTICLE_CATEGORY_ID, Convert.ToInt32(_configuration["Redis:Database:db_common"]));
                     //// Tạo message để push vào queue
                     //var j_param = new Dictionary<string, object>
                     //        {

@@ -26,7 +26,7 @@ namespace Utilities.Contants
         public const string ORDER_DETAIL_FE = "ORDER_DETAIL_FE_OCLOCK_";
         public const string DISTRICT = "DISTRICT_OCLOCK_";
         public const string WARD = "WARD_OCLOCK_";
-
+        public const string ARTICLE_CATEGORY_ID = "ARTICLE_CATEGORY_OCLOCK_";
         public const string PRODUCT_BRAND = "PRODUCT_BRAND_OCLOCK_";
         public const string PRODUCT_BY_BRAND = "PRODUCT_BY_BRAND_OCLOCK_";
         public const string PRODUCT_BY_PRICERANGE = "PRODUCT_BY_PRICERANGE_OCLOCK_";
