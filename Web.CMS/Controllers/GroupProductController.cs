@@ -107,7 +107,7 @@ namespace WEB.CMS.Controllers
                 // Tạo message để push vào queue
                 var j_param = new Dictionary<string, object>
                             {
-                                { "store_name", "sp_getGroupProduct" },
+                                { "store_name", "SP_GetGroupProduct" },
                                 { "index_es", "oclock_sp_getgroupproduct" },
                                 {"project_type", Convert.ToInt16(ProjectType.OCLOCK) },
                                   {"id" , id }
